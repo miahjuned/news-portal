@@ -7,8 +7,8 @@ import {
   Route
 } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import DashboardRightSIde from "./components/Dashboard/Dashboard_RightSIde";
-import DashboardSidebar from "./components/Dashboard_sidebar/DashboardSidebar";
+import AddNews from "./components/AddNews/AddNews";
+import NewAdmin from "./components/AddAdmin/NewAdmin";
 
 function App() {
   return (
@@ -19,12 +19,26 @@ function App() {
             <Home></Home>
               {/* <About /> */}
             </Route>
-            <Route path="/j">
+            <Route path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
-            <Route path="/addnews">
-              <DashboardRightSIde></DashboardRightSIde>
+
+            <Route path="/add-admin">
+              <NewAdmin></NewAdmin>
             </Route>
+            
+            <Route path="/addnews">
+              <AddNews></AddNews>
+            </Route>
+            
+            <Route path="/users">
+              <AddNews></AddNews>
+            </Route>
+            
+            <Route path="/login">
+              <AddNews></AddNews>
+            </Route>
+
         </Switch>
       </Router>
     </div>

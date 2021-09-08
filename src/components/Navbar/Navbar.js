@@ -14,6 +14,7 @@ const NavbarArea = () => {
             <NavLink  href="#About">About</NavLink>
             <NavLink  href="#Fetured">Fetured</NavLink>
             <NavLink  href="#Dropwon">Dropwon</NavLink>
+            <NavLink  href="Dashboard">Dashboard</NavLink>
 
             <NavDropdown>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

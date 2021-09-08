@@ -1,0 +1,26 @@
+.dashboard_navbar {
+    padding:20px 0px !important;
+    background:#e6e6e6 !important;
+    -webkit-box-shadow: 0px 0px 12px -5px #000000;
+    box-shadow: 0px 0px 12px -5px #000000;
+}
+
+.dashboard_menu , .dashboard_Login{
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight:bold !important;
+    letter-spacing:normal !important;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+.dashboard_menu {
+    color: #7a7d85 !important;
+}
+.dashboard_menu:hover{
+    color: #1dbf73 !important;
+}
+.dashboard_Login {
+    color: #ffffff !important;
+    background-color: #1dbf73;
+    border-radius: 5px;
+}
