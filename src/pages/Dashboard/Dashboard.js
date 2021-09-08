@@ -1,15 +1,14 @@
 import React from 'react';
 import './Dashboard.css';
-import Navbar from '../../components/Navbar/Navbar';
 import { Row , Col} from 'react-bootstrap';
 import DashboardSidebar from '../../components/Dashboard_sidebar/DashboardSidebar';
 import DashboardRightSIde from '../../components/Dashboard/Dashboard_RightSIde';
-import Home from '../Home/Home';
+import DashboardNavbar from '../../components/Dashboard-Navbar/DashboardNavbar';
 
 const Dashboard = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <DashboardNavbar></DashboardNavbar> */}
             <Row>
                 <Col md={3}>
                     <div className="bg-info">
