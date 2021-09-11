@@ -1,0 +1,43 @@
+.footer-area{
+    background-image: url(../../images/footer-bg.png);
+    background-size: cover;
+}
+.footer-area .menu-title{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.footer-area li, .menu-item{
+    text-decoration: none;
+    padding-bottom: 10px;
+    font-weight: 600;
+    color: #84889F;
+    transition: 0.25s;
+    font-size: 18px;
+}
+
+.footer-area .menu-item:hover{
+    color: #1cc7c1 !important;
+    transform: translateX(8px);
+}
+
+
+.social-media .icon{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #1cc7c1;
+    border-radius: 50%;
+    border: 1px solid #6ACECE;
+    padding: 10px;
+}
+.social-media .active-icon{
+    background-color: #6ACECE ;
+    color:white;
+}
+
+.copyright p {
+    font-weight: 600;
+    color: #848B9F;
+    font-size: 18px;
+  }

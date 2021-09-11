@@ -1,0 +1,19 @@
+.header{
+    height: 160px;
+}
+.header-title {
+    height: 30px;
+    padding: 2px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+}
+.breaking_News p{
+    font-weight: 900;
+    font-size: large;
+    text-align: center;
+    background-color: red;
+    text-transform: uppercase;
+}
+.breaking_News_Headline {
+    color: #31d6aa;
+}
