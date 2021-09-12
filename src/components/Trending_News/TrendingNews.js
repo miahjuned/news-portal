@@ -1,10 +1,10 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import './TrendingNews.css';
 
 const TrendingNews = () => {
     return (
-        <div>
+        <Container className='border mb-5 pb-5 pt-5'>
             <div>
                 <Row>
                     <Col md={2}>
@@ -38,7 +38,7 @@ const TrendingNews = () => {
                     <Col md={6}></Col>
                 </Row>
             </div>
-        </div>
+       </Container>
     );
 };
 

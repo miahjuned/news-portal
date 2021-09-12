@@ -13,9 +13,6 @@ const Home = () => {
     return (
         <div className="header">
             <Row className="header-title">
-                <Col md={3}>
-                    <p><strong>Date:</strong> {todayDate}</p>
-                </Col>
                 <Col className="breaking_News" md={2}>
                     <p>Breaking News</p>
                 </Col>
@@ -23,6 +20,9 @@ const Home = () => {
                     <marquee  direction="left">
                         This is a sample scrolling text that has scrolls texts to left.
                     </marquee>
+                </Col>
+                <Col md={3}>
+                    <p><strong>Date:</strong> {todayDate}</p>
                 </Col>
                 <Col md={3}>
                    <p> social media icon</p>

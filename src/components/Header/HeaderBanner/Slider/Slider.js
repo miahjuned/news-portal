@@ -1,14 +1,21 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Slider = (props) => {
-    const data = props.data;
-    console.log('data', data)
-    const {name, desc, img , designation} = data;
+
+const SliderArea = (props) => {
+    const {title, name ,from, img} = props.data;
+
     return (
-        <div><li>{name}</li>
-        </div>
+        <section className=''>
+            <Container>
+                    <div>
+                        <img className='img-fluid' src={img} alt=''/>
+                        <Link className='textPrimary'>{title}</Link>
+                    </div>
+            </Container>
+        </section>
     );
 };
 
-export default Slider;
+export default SliderArea;
