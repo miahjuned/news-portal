@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import './App.css';
 import Home from "./pages/Home/Home";
 import {
@@ -9,10 +9,19 @@ import {
 import Dashboard from "./pages/Dashboard/Dashboard";
 import AddNews from "./components/AddNews/AddNews";
 import NewAdmin from "./components/AddAdmin/NewAdmin";
+import Login from "./pages/Login/Login";
+import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
+import User from "./components/User/User";
+
+
+export const UserContext = createContext();
 
 function App() {
+  const [logInUser, setLogInUser] = useState({});
+  
+
   return (
-    <div>
+    <UserContext.Provider value={[logInUser, setLogInUser]}>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -32,16 +41,21 @@ function App() {
             </Route>
             
             <Route path="/users">
-              <AddNews></AddNews>
+              <User></User>
             </Route>
             
             <Route path="/login">
-              <AddNews></AddNews>
+              <Login></Login>
             </Route>
+
+            <PrivateRoute path="/dashboard">
+              
+              {/* <Dashboard></Dashboard> */}
+            </PrivateRoute>
 
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 

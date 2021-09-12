@@ -35,12 +35,12 @@ a{
     border: transparent !important;
 }
 
-.formContainer {
+.formContainer, .allUser {
     /* height: 900px !important; */
     padding: 30px 0px 100px 0px;
     background-color: #f7f7f7;
 }
-.newsForm {
+.newsForm, .allUser-table {
     padding: 50px;
     border-radius: 20px;
     background-color: #ffffff;
