@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Col, Container, Button, Form, FormControl, FormGroup, FormLabel, Row, FormSelect } from 'react-bootstrap';
+import { Col, Container, Button, Form, FormControl, FormGroup, FormLabel, Row, FormSelect, Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import DashboardNavbar from '../Dashboard-Navbar/DashboardNavbar';
 
@@ -9,6 +9,9 @@ const DashboardRightSIde = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const [ImageUrl, setImageUrl] = useState(null);
+    const [backendRes, setBackendRes] = useState(null);
+    setTimeout(() => setBackendRes(true), 10000)
+
 
     const onSubmit = newNews => {
         console.log('onsubmit data', onSubmit)
@@ -23,7 +26,7 @@ const DashboardRightSIde = () => {
             imageURL: ImageUrl
         }
 
-        const url = `http://localhost:5000/newsadd`;
+        const url = `https://updated-news.herokuapp.com/newsadd`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -34,7 +37,7 @@ const DashboardRightSIde = () => {
         // .then(res => alert('server side responded', res))
         .then(res => res.json())
         .then(success => {
-            alert('server side responded', success)
+            setBackendRes('Data added successfully', success)
             // if(success){
             //     alert('server side responded')
             // }
@@ -46,11 +49,10 @@ const DashboardRightSIde = () => {
         const imageData = new FormData();
         imageData.set('key', '994392279289c0649211748cc7b4c09d');
         imageData.append('image', img.target.files[0]);
-
         axios.post('https://api.imgbb.com/1/upload', imageData)
         .then(function (res) {
             setImageUrl(res.data.data.display_url);
-            alert("image adde imgbb", res);
+            setTimeout(() => setImageUrl(null), 10000)
         })
         .catch(function (err) {
             alert("imgbb error", err);
@@ -105,8 +107,10 @@ const DashboardRightSIde = () => {
 
                             <FormGroup className="mb-3" controlId="formGridAddress1">
                                 <FormLabel>Featured Image:</FormLabel>
-                                <FormControl type="file" onChange={handleImageUpload} {...register('image', { required: true })} />
+                                <FormControl type="file" onChange={handleImageUpload}  />
                                 {errors.image && <span className="error">Image is required</span>}
+                                {ImageUrl == null ?  <p style={{color:"red"}}>Please Upload an image</p> :
+                                 <p style={{color:"green"}}>Image uploaded</p>}
                             </FormGroup>
                         
                         <Row className="mb-3">
@@ -136,9 +140,12 @@ const DashboardRightSIde = () => {
 
                         </Row>
 
-                        <Button className="btnPrimary" type="submit">
-                            Submit
-                        </Button>
+                        {/* <Button className="btnPrimary" type="submit"> Submit </Button> */}
+                        {ImageUrl == null ?  <Button className="btnPrimary" type="submit" disabled> Submit </Button>
+                         : <Button className="btnPrimary" type="submit"> Submit </Button>}
+                         
+                         <p className='textPrimary'>{backendRes}</p>
+
                     </Form>
                 </Container>
             </div>

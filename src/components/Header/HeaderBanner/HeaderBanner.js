@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Col, Container, Row } from 'react-bootstrap';
 import fakeData from '../../../Data/Fakedata';
 import Category from './Catagory/Catagory';
@@ -6,8 +6,22 @@ import SliderDetails from './Slider/Slider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from 'react-router-dom';
 const HeaderBanner = () => {
-    
+
+
+
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+      fetch('https://updated-news.herokuapp.com/allnews')
+      .then(res => res.json())
+      .then(data => setNews(data))
+  }, [])
+
+
+
+
     const settings = {
         dots: true,
         infinite: true,
@@ -37,20 +51,16 @@ const HeaderBanner = () => {
         <section>
             <Container>
                 <Row  className=' mt-5 mb-5'>
-                    <Col className='text-uppercase text-center pt-2 border' md={3}>
+                    <Col style={{height: "450px"}} className='text-uppercase text-center pt-2 border' md={3}>
                         
                         <h2 className='textPrimary text-uppercase border'>Category</h2>
-                        {
-                            fakeData.map((data, index) => (
-                            <Category key={index} data={data}>
-                            </Category>
-                        ))}
+                      <Category></Category>
                    </Col>
                     <Col md={9}>
                         
                         <Slider {...settings}>
                             {
-                                fakeData.map((data, index) => (
+                                news.map((data, index) => (
                                 <SliderDetails key={index} data={data}>
                                 </SliderDetails>
                             ))}

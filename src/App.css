@@ -14,8 +14,9 @@
 .textPrimary{
     color: #1dbf73;
 }
-.textSecondary{
-    color:gray;
+.textSecondary, li{
+    color:gray !important;
+    list-style: none;
 }
 
 a{

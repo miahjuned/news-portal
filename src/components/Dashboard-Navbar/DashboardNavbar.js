@@ -26,7 +26,7 @@ const DashboardNavbar = () => {
                         </Nav>
 
                         <Nav>
-                            <Link className="me-auto dashboard_menu" to="/">More deets</Link>
+                            <Link className="me-auto dashboard_menu" to="/">Back Home</Link>
                             <Link className="me-auto btnPrimary" eventKey={2} to="/login">
                                 Login
                             </Link>

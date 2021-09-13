@@ -1,41 +1,31 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Catagory = (props) => {
+const Category = () => {
     
-    const data = props.data;
-    console.log('data', data)
-    const {name, desc, img , designation} = data;
+   const allCategory = [
+       {name: 'All',link: '/all'},
+       {name: 'Food', link: '/all'},
+       {name: 'Life', link: '/life'},
+       {name: 'Racing', link: '/racing'},
+       {name: 'Technology', link: '/technology'},
+       {name: 'Travel', link: '/travel'},
+       {name: 'World', link: '/world'}
+   ]
     return (
-        <div>
-             <td className='pb-2 textSecondary'>
-                <tr >{name}</tr>
-            </td>
+        <div >
+            {
+                allCategory.map((data, index) => <ul data={data} key={index}>
+                    <li className='my-3 text-capitalize border'>
+                        <Link to={`${data.link}`} className='textSecondary'>
+                            {data.name}
+                        </Link>
+                    </li>
+                </ul>)
+            }
         </div>
     );
 };
 
-export default Catagory;
-
-
-   
-// const [admin, setAdmin] = useState([]);
-// console.log('data', admin)
-
-// useEffect(() => {
-//     fetch('http://localhost:5000/alladmin')
-//     .then(res => res.json())
-//     .then(data => setAdmin(data))
-// }, [])
-// // const data = props.data;
-// // console.log('data', data)
-// // const {name, desc, img , designation} = data;
-// return (
-//     <tbody striped bordered hover size="sm">                                    
-//         {
-//             admin.map((allAdmin, index) =>(<tr allAdmin={allAdmin} key={index}>
-//                 <td className='pb-3'>{allAdmin.newAdminName}</td>
-//             </tr>))
-//         }
-//     </tbody>
-// );
+export default Category;

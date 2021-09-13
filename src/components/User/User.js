@@ -7,7 +7,7 @@ const User = () => {
     console.log('data', admin)
 
     useEffect(() => {
-        fetch('http://localhost:5000/alladmin')
+        fetch('https://updated-news.herokuapp.com/alladmin')
         .then(res => res.json())
         .then(data => setAdmin(data))
     }, [])

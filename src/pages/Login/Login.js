@@ -45,7 +45,7 @@ const DashboardRightSIde = () => {
             date: new Date()
         }
 
-        const url = `http://localhost:5000/newadmin`;
+        const url = `https://updated-news.herokuapp.com/newadmin`;
         fetch(url, {
             method: 'POST',
             headers: {
